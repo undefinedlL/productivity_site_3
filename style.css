@@ -3646,6 +3646,10 @@ NEWSLETTER SUBSCRIPTION
         margin: 0 auto;
         margin-top: 30px;
     }
+
+    .page {
+        overflow-x: hidden;
+    }
 }
 @media (max-width: 660px) {
     .email_btn button {
