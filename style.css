@@ -2654,21 +2654,11 @@ CUSTOMER HELP
     margin-top: 68px;
 
     text-align: left;
-    transform: translateY(-30px);
-    opacity: 0;
 
-}
-.questions_block.act {
-    opacity: 1;
-    transform: none;
-
-    transition: all 1s ease;
 }
 
 .question_block {
     border-bottom: 1px solid #D8E3FE;
-
-    
 }
 
 .question {
@@ -2730,17 +2720,28 @@ CUSTOMER HELP
 }
 
 .answer_block {
-    display: none;
-    justify-content: center;
-    align-items: center;
-
-    margin-bottom: 53px;
+    display: grid;
+    grid-template-rows: 0fr;
+    overflow: hidden;
 
     transition: all .5s ease;
+}
+.answer_block.act {
+    transition: all .5s ease;
+    margin-bottom: 53px;
+    grid-template-rows: 1fr;
+}
+
+.answer_block_inner {
+    min-height: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .answer {
     max-width: 391px;
+    min-height: 0;
 
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
@@ -2758,9 +2759,7 @@ CUSTOMER HELP
 .btn_doc {
     max-width: 195px;
     width: 100%;
-    height: 43px;
-
-
+    min-height: 0px;
 }
 .btn_doc a{
     font-family: 'Quicksand', sans-serif;

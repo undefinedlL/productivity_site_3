@@ -7,10 +7,17 @@ const scrollPosition = () => document.documentElement.scrollTop || window.pageYO
 const containsClass = (elm, nameOfClass) => elm.classList.contains(nameOfClass);
 
 window.addEventListener('scroll', () => {
-    if (scrollPosition() > lastScroll && !containsClass(header, classHide) && scrollPosition() > 200) {
+    if (
+        scrollPosition() > lastScroll &&
+        !containsClass(header, classHide) &&
+        scrollPosition() > 200
+    ) {
         header.classList.add(classHide);
         menuInMobileVersion.classList.add(classHide);
-    } else if (scrollPosition() < lastScroll && containsClass(header, classHide)) {
+    } else if (
+        scrollPosition() < lastScroll &&
+        containsClass(header, classHide)
+    ) {
         header.classList.remove(classHide);
         menuInMobileVersion.classList.remove(classHide);
     }

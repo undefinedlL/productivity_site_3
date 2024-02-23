@@ -26,7 +26,7 @@ btnArray.forEach((btn, index) => {
     })
 });
 
-// two functions for play/pause button in the intro section
+// two functions for play/pause button in the intro section 
 let currentPartOfGraph = 0;
 let timer;
 const PlayIntroBtn = document.getElementById('play_intro');
@@ -50,8 +50,6 @@ const introBtnPlay = () => {
     timer = setTimeout(introBtnPlay, 3000);
     
 };
-
-
 
 const introBtnPause = () => {
     if (timer) {
@@ -99,110 +97,3 @@ PlayIntroBtn.addEventListener('click', introBtnPlay);
 PauseIntroBtn.addEventListener('click', introBtnPause);
 
 }
-
-// ===================================
-
-new Swiper('.swiper-our-resources', {
-    navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-    },
-
-    pagination: {
-        el: '.swiper-pagination',
-
-        clickable: true,
-    },
-
-    centeredSlides: true,
-    loop: true,
-
-    slidesPerView: 1,
-
-    
-});
-
-// =======================================
-
-const feedbackSlider = document.querySelector(".feedback_slider");
-const feedbackSliderContainer = document.querySelector('.feedback_slider_container');
-let feedbackSlideWidth = document.querySelector('.feedback_slide').offsetWidth;
-const slideArr = document.querySelectorAll('.feedback_slide');
-const feedbackPagination = document.querySelectorAll('.feedback_slider_pagination span');
-const customersPhoto = document.querySelectorAll('.customer_img');
-
-let currentSlide = 0;
-
-slideArr.forEach((slide, index) => {
-    if (index === 0) {
-        slide.style.opacity = '1';
-        customersPhoto[index].style.transition = 'all .5s ease-in';
-        customersPhoto[index].style.display = 'block';
-    } else {
-        slide.style.opacity = '.5';
-        customersPhoto[index].style.transition = 'all .5s ease-in';
-        customersPhoto[index].style.display = 'none';
-        
-    }
-});
-
-
-for (let i = 0; i < feedbackPagination.length; i++) {
-    feedbackPagination[i].addEventListener('click', () => {
-
-        slide(i);
-
-    })
-}
-
-
-function autoSlide() {
-    if (currentSlide > feedbackPagination.length - 1) {
-        currentSlide = 0;
-    }
-
-    slide(currentSlide);
-    currentSlide++;
-};
-
-function slide(ind) {
-    feedbackSliderContainer.style.transform = `translateX(-${(feedbackSlideWidth + 64) * ind}px)`;
-    slideArr.forEach((slide, index) => {
-        if (index === ind) {
-            slide.style.opacity = '1';
-            customersPhoto[index].style.display = 'block';
-        } else {
-            slide.style.opacity = '.5';
-        }
-    });
-    feedbackPagination.forEach(pag => {
-        pag.classList.remove('active');
-    });
-    feedbackPagination[ind].classList.add('active');
-};
-
-// =======================================
-
-let questionsArr = document.querySelectorAll('.question');
-let questionsBlocksArr = document.querySelectorAll('.question_block');
-let answersArr = document.querySelectorAll('.answer_block');
-
-questionsArr.forEach((question, index) => {
-    question.addEventListener('click', function () {
-        
-        if (!question.classList.contains('_clicked')) {  
-            for (let j = 0; j < questionsArr.length; j++) {
-                questionsArr[j].classList.remove('_clicked');
-                answersArr[j].style.display = 'none';
-            }
-            question.classList.add('_clicked');
-            answersArr[index].style.display = 'flex';
-        } else {
-            question.classList.remove('_clicked');
-            answersArr[index].style.display = 'none';
-;        }
-    })
-})
-
-// ================================
-

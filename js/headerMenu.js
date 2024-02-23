@@ -11,7 +11,7 @@ openMenuButton.addEventListener('click', () => {
     document.body.style.overflow = 'hidden';
 });
 closeMenuButton.addEventListener('click', () => {
-    menuItself.classList.remove('open');
+    menuItself.classList.remove("open");
     openMenuButton.classList.remove('click_open');
     closeMenuButton.classList.remove('click_open')
 
