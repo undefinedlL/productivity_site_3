@@ -30,15 +30,6 @@ for (let i = 0; i < feedbackPagination.length; i++) {
     })
 }
 
-function autoSlide() {
-    if (currentSlide > feedbackPagination.length - 1) {
-        currentSlide = 0;
-    }
-
-    slide(currentSlide);
-    currentSlide++;
-};
-
 function slide(ind) {
     feedbackSliderContainer.style.transform = `translateX(-${(feedbackSlideWidth + 64) * ind}px)`;
     slideArr.forEach((slide, index) => {

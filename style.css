@@ -20,6 +20,8 @@ body {
 a {
     text-decoration: none;
     color: #000;
+
+    cursor: pointer;
 }
 
 .container {
@@ -895,7 +897,7 @@ INTRO
 .cloud_7 {
     top: 70%;
     right: 10%;
-    z-index: 1;
+    z-index: -3;
 }
 .cloud_8 {
     top: 20%;
@@ -922,13 +924,13 @@ INTRO
 }
 
 .intro .subtitle {
-    margin-top: 90px;
+    padding-top: 90px;
 }
 
 .main_title {
     font-size: 48px;
 
-    margin-top: 15px;
+    padding-top: 15px;
 }
 .title {
     font-weight: 500;
@@ -1212,6 +1214,10 @@ dots on the graph
     width: 92px;
     height: 68px;
 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     border-radius: 3px;
 
     background-color: #fffcfc;
@@ -1304,13 +1310,13 @@ APPLICATION FOR DEVICES
     justify-content: flex-end;
 
     margin: 0 auto;
-    margin-top: 90px;
+    padding-top: 90px;
     margin-bottom: 100px;
 }
 
 .application_for_devices_inner .title {
     margin-bottom: 27px;
-    margin-top: 27px;
+    padding-top: 27px;
 }
 
 .app_f_ds_content {
@@ -1522,6 +1528,7 @@ About
 .cloud_about_1 {
     position: absolute;
     top: 10%;
+    z-index: -1;
 }
 
 .cloud_about_2 {
@@ -1533,12 +1540,12 @@ About
 .about_inner {
     text-align: center;
 
-    margin-top: 170px;
+    padding-top: 170px;
     margin-bottom: 170px;
 }
 
 .about_inner .title {
-    margin-top: 20px;
+    padding-top: 20px;
     margin-bottom: 90px;
 }
 
@@ -1639,7 +1646,7 @@ About
 }
 
 .item_title {
-    margin-top: 33px;
+    padding-top: 33px;
     margin-bottom: 25px;
     
     color: #4074f8;
@@ -2034,7 +2041,7 @@ _________*/
 
 .our_resources .title {
     margin-bottom: 92px;
-    margin-top: 20px;
+    padding-top: 20px;
 }
 
 /*Slider*/
@@ -2651,7 +2658,7 @@ CUSTOMER HELP
     height: auto;
 
     margin: 0 auto;
-    margin-top: 68px;
+    padding-top: 68px;
 
     text-align: left;
 
@@ -2678,7 +2685,7 @@ CUSTOMER HELP
     width: auto;
 
     margin-left: 48px;
-    margin-top: 17px;
+    padding-top: 17px;
     margin-bottom: 16px;
 
     cursor: pointer;
@@ -2756,12 +2763,10 @@ CUSTOMER HELP
     transition: all .6s ease;
 }
 
-.btn_doc {
+.btn_doc{
     max-width: 195px;
     width: 100%;
     min-height: 0px;
-}
-.btn_doc a{
     font-family: 'Quicksand', sans-serif;
     font-weight: 500;
     font-size: 13px;
@@ -2771,8 +2776,10 @@ CUSTOMER HELP
     padding: 13px 32px;
     
     background-color: #E8ECF4;
+    
+    cursor: pointer;
 }
-.btn_doc a:hover {
+.btn_doc:hover {
     box-shadow: 0 4px 4px 0 #0000003b;
 }
 
@@ -3418,7 +3425,7 @@ NEWSLETTER SUBSCRIPTION
         text-align: left;
     }
     .intro_content .subtitle {
-        margin-top: 40px;
+        padding-top: 40px;
     }
 
     .intro_text {
@@ -3477,8 +3484,6 @@ NEWSLETTER SUBSCRIPTION
     }
 
     .application_for_devices {
-        background-image: url('Images/appDeskMob.png');
-
         background-repeat: no-repeat;
         background-size: cover;
     }
@@ -3531,6 +3536,11 @@ NEWSLETTER SUBSCRIPTION
     .gs_content .subtitle,
     .feedback_content .subtitle {
         font-size: 15px;
+    }
+
+    .answer_block_inner {
+        
+    flex-direction: column;
     }
 
     .title {
