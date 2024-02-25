@@ -684,7 +684,6 @@ a {
 }
 
 .main_btn:hover {
-    transform: scale(1.035);
 
     transition: all .3s ease-in;
 
@@ -1942,13 +1941,18 @@ _________*/
     height: 342px;
 }
 
-.procents_stat .stat_content img {
+.procents_stat .stat_content .stat-content-icon  {
     opacity: 0;
+    width: 67px;
+    height: 68px;
+    display: inline-block;
+
+    background-image: url('./Images/procent_cust.svg');
 
     transform: translateY(-10px);
 }
 
-.procents_stat.act .stat_content img {
+.procents_stat.act .stat_content .stat-content-icon {
     opacity: 1;
 
     transform: none;
@@ -1983,9 +1987,6 @@ _________*/
 .procents_stat .stat_content {
     margin-left: auto;
 }
-.procents_stat img {
-    margin-bottom: 10px;
-}
 
 .count_user_stat {
     background-color: rgba(233, 239, 255, 1);
@@ -1998,13 +1999,19 @@ _________*/
 
     color: rgba(94, 128, 255, 1);
 }
-.count_user_stat .stat_content img {
+.count_user_stat .stat_content .stat-content-icon {
     opacity: 0;
+
+    display: inline-block;
+    width: 75px;
+    height: 66px;
+
+    background-image: url('./Images/count_cust.svg');
 
     transform: translateY(-10px);
 }
 
-.count_user_stat.act .stat_content img {
+.count_user_stat.act .stat_content .stat-content-icon {
     opacity: 1;
 
     transform: none;
@@ -2515,6 +2522,9 @@ _________*/
     position: relative;
 
     overflow: hidden;
+
+    user-select: none;
+    touch-action: pan-y;
 }
 
 .feedback_slider_container {
@@ -2523,7 +2533,15 @@ _________*/
     
     position: absolute;
 
+    display: inline-flex;
+
     transition: all 1s ease;
+}
+.feedback_slider_container.grab {
+    cursor: grab;
+}
+.feedback_slider_container.grabbing {
+    cursor: grabbing;
 }
 
 .slider_inner {
@@ -3280,6 +3298,26 @@ NEWSLETTER SUBSCRIPTION
     margin-top: 23px;
 }
 
+
+.my-info {
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    width: 100%;
+    color: #AEB8D0;
+
+    padding-top: 30px;
+}
+
+.my-info h3 {
+    font-size: 16px;
+}
+
+.my-info a {
+    color: #AEB8D0;
+}
+
+
 @media (max-width: 1250px) {
 
     .container {
@@ -3825,8 +3863,7 @@ NEWSLETTER SUBSCRIPTION
     }
 
     .feedback_slide_text {
-        overflow-y: scroll;
-        padding: 20px;
+        padding: 10px;
     }
 
     .feedback_slider_pagination {
@@ -3845,14 +3882,28 @@ NEWSLETTER SUBSCRIPTION
         left: calc(50% - 200px / 2);
     }
 
-    .email_btn input {
-        width: auto;
-    }
-
     .swiper-pagination-bullets.swiper-pagination-horizontal {
         top: var(--swiper-pagination-top, 92%) !important;
     }
 
+    .gs_btns_block {
+        flex-direction: column;
+    }
+
+    .gs_btns_block .gs_btn_doc {
+        border: 1px solid #A0B4FF;
+    }
+
+    .email_btn input {
+        width: 55%;
+    }
+    .email_btn button {
+        width: 30%;
+    }
+    
+form {
+    width: 100%;
+}
 }
 
 @media (max-width: 350px) {
@@ -3870,7 +3921,6 @@ NEWSLETTER SUBSCRIPTION
     }
 
     .feedback_slide_text {
-        overflow-y: scroll;
         padding: 10px;
     }
 
@@ -3886,12 +3936,10 @@ NEWSLETTER SUBSCRIPTION
         height: 560px;
     }
     .email_btn input {
-        width: 100%;
-
-        margin-bottom: 10px;
+        width: 55%;
     }
     .email_btn button {
-        width: 100%;
+        width: 30%;
     }
 
 }

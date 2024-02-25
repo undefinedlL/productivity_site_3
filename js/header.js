@@ -1,12 +1,13 @@
 let lastScroll = 0;
-const header = document.querySelector('.header');
-const menuInMobileVersion = document.querySelector('.header_menu');
-const classHide = 'hide';
+const header = document.querySelector(".header");
+const menuInMobileVersion = document.querySelector(".header_menu");
+const classHide = "hide";
 
-const scrollPosition = () => document.documentElement.scrollTop || window.pageYOffset;
+const scrollPosition = () =>
+    document.documentElement.scrollTop || window.pageYOffset;
 const containsClass = (elm, nameOfClass) => elm.classList.contains(nameOfClass);
 
-window.addEventListener('scroll', () => {
+window.addEventListener("scroll", () => {
     if (
         scrollPosition() > lastScroll &&
         !containsClass(header, classHide) &&
@@ -23,4 +24,4 @@ window.addEventListener('scroll', () => {
     }
 
     lastScroll = scrollPosition();
-})
+});

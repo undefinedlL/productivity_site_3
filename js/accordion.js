@@ -7,13 +7,13 @@ questionsArr.forEach((question, index) => {
         if (!question.classList.contains("_clicked")) {
             for (let j = 0; j < questionsArr.length; j++) {
                 questionsArr[j].classList.remove("_clicked");
-                answersArr[j].classList.remove('act');
+                answersArr[j].classList.remove("act");
             }
             question.classList.add("_clicked");
-            answersArr[index].classList.add('act');
+            answersArr[index].classList.add("act");
         } else {
             question.classList.remove("_clicked");
-            answersArr[index].classList.remove('act');
+            answersArr[index].classList.remove("act");
         }
     });
 });
